@@ -200,7 +200,7 @@ class UiForm(QtGui.QWidget):
 
     def read_conf(self):
         cf = configparser.ConfigParser()
-        cf.read(self.exeruningpath + "\danmuji.conf")
+        cf.read(self.exeruningpath + "\\danmuji.conf")
         if cf.has_section("settings"):
             if cf.has_option("settings", "roomId"):
                 self.lineEditRoomId.setText(cf.get("settings", "roomId"))
@@ -247,7 +247,7 @@ class UiForm(QtGui.QWidget):
         cf.set("settings", "scroller_height", self.lineEditHeight.text())
         cf.set("settings", "scroller_font", self.lineEditFontSize.text())
         cf.set("settings", "scroller_interval", self.lineEditUpdateInterval.text())
-        cf.write(open(self.exeruningpath + "\danmuji.conf", "w"))
+        cf.write(open(self.exeruningpath + "\\danmuji.conf", "w"))
 
     def start(self):
         room_id = self.lineEditRoomId.text()
