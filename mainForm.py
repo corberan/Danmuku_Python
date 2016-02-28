@@ -62,9 +62,9 @@ class UiForm(QtGui.QWidget):
     def setup_ui(self, form):
         form.setObjectName("Form")
         form.resize(682, 470)
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("." + os.path.sep + "icon-48.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        form.setWindowIcon(icon)
+        # icon = QtGui.QIcon()
+        # icon.addPixmap(QtGui.QPixmap(self.exeruningpath + os.path.sep + "icon-48.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        # form.setWindowIcon(icon)
         self.gridLayoutWidget = QtGui.QWidget(form)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 10, 659, 431))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
