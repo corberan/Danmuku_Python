@@ -45,6 +45,8 @@ class RightScroller(QWidget):
         # self.__view.setStyleSheet("background: transparent;")
         self.__view.setContentsMargins(0, 0, 0, 0)
         # QGraphicsTextItem 相关
+        if font_size < 0:
+            font_size = 14
         self.__font = QFont()
         if 'Windows' in platform.system():
             self.__font = QFont("微软雅黑", font_size, QFont.Normal)
