@@ -63,7 +63,7 @@ class UiForm(QtGui.QWidget):
         form.setObjectName("Form")
         form.resize(682, 470)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("./icon-48.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("." + os.path.sep + "icon-48.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         form.setWindowIcon(icon)
         self.gridLayoutWidget = QtGui.QWidget(form)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 10, 659, 431))
@@ -200,7 +200,7 @@ class UiForm(QtGui.QWidget):
 
     def read_conf(self):
         cf = configparser.ConfigParser()
-        cf.read(self.exeruningpath + "\\danmuji.conf")
+        cf.read(self.exeruningpath + os.path.sep + "danmuji.conf")
         if cf.has_section("settings"):
             if cf.has_option("settings", "roomId"):
                 self.lineEditRoomId.setText(cf.get("settings", "roomId"))
@@ -247,7 +247,7 @@ class UiForm(QtGui.QWidget):
         cf.set("settings", "scroller_height", self.lineEditHeight.text())
         cf.set("settings", "scroller_font", self.lineEditFontSize.text())
         cf.set("settings", "scroller_interval", self.lineEditUpdateInterval.text())
-        cf.write(open(self.exeruningpath + "\\danmuji.conf", "w"))
+        cf.write(open(self.exeruningpath + os.path.sep + "danmuji.conf", "w"))
 
     def start(self):
         room_id = self.lineEditRoomId.text()
